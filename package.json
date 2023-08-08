@@ -1,5 +1,5 @@
 {
-  "name": "ical-test",
+  "name": "simplicity-locker-node",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,11 +10,15 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
-    "@touch4it/ical-timezones": "^1.9.0",
-    "ical-generator": "^5.0.0"
+    "axios": "1.3.4",
+    "express": "4.18.2",
+    "ical-generator": "^5.0.0",
+    "jwt-decode": "3.1.2",
+    "mongodb": "4.7.0",
+    "mysql2": "2.3.3"
   }
 }
