@@ -20,10 +20,11 @@ calendar.createEvent({
     url: 'https://test.com/'
 });
 
+const PORT = process.env.PORT || 5001
 http.createServer((req, res) => {
     console.log('CALLED');
     return calendar.serve(res);
 })
-    .listen(3000, '127.0.0.1', () => {
-        console.log('Server running at http://127.0.0.1:3000/');
+    .listen(PORT, '127.0.0.1', () => {
+        console.log(`Server running at http://127.0.0.1:${PORT}/`);
     });
