@@ -15,10 +15,8 @@ app.get('/feed.ical', (req, res) => {
     calendar.url('https://ical-test-9982b15a03ae.herokuapp.com/feed.ical');
     calendar.ttl(30); // 30 seconds
 
-    const startTime = DateTime.utc().plus({ days: 1 })
-    const endTime = startTime.plus({ hours: 4 });
-
-    endTime.setHours(startTime.getHours()+1);
+    const startTime = DateTime.utc().plus({ days: 1 });
+    const endTime = startTime.plus({ hours: 1 });
 
     calendar.method(ICalCalendarMethod.PUBLISH);
     calendar.createEvent({
