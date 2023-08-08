@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.get('/feed.ical', (req, res) => {
     const updated = DateTime.utc().toISO();
-    const calendar = ical({name: `my first - ${updated}`});
+    const calendar = ical({name: `testEvent`});
 
     calendar.source('https://ical-test-9982b15a03ae.herokuapp.com/feed.ical');
     calendar.url('https://ical-test-9982b15a03ae.herokuapp.com/feed.ical');
@@ -25,10 +25,10 @@ app.get('/feed.ical', (req, res) => {
         timezone: 'Europe/London',
         start: startTime,
         end: endTime,
-        summary: 'Test Event',
+        summary: 'Test Event 2',
         description: `This is a description - updated: ${updated} `,
         location: 'Some location',
-        url: 'https://test.com/'
+        url: `https://test.com/?updated=${updated}`
     });
 
     return calendar.serve(res);
