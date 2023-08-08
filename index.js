@@ -6,10 +6,10 @@ const PORT = process.env.PORT || 5001
 const app = express();
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/feed.ical', (req, res) => {
     const calendar = ical({name: 'my first iCal'});
 
-    calendar.url('http://127.0.0.1:3000');
+    calendar.url('https://ical-test-9982b15a03ae.herokuapp.com/feed.ical');
     calendar.ttl(60); // 10 seconds
 
     const startTime = new Date();
